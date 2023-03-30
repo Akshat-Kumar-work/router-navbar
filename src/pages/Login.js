@@ -1,6 +1,6 @@
 import Template from "../components/Template"
 import loginImg from "../assets/login.png"
-function Login (setIsLoggedIn){
+function Login (props){
 
     return(
         <div>
@@ -9,8 +9,8 @@ function Login (setIsLoggedIn){
                 desc1="Build skills for today , tommorow and beyond"
                 desc2="Education to future-proof your career"
                 image={loginImg}
-                formType="login"
-                setIsLoggedIn={setIsLoggedIn}
+                formtype="login"
+                setIsLoggedIn={props.setIsLoggedIn}
                 ></Template>
         </div>
     )

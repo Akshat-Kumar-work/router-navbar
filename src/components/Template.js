@@ -2,20 +2,20 @@ import frameImg from "../assets/frame.png"
 import Loginform from "./Loginform";
 import Signupform from "./Signform";
 
-function Template (title , desc1 , desc2 , image , formtype ,  setIsLoggedIn){
+function Template (props){
 
     return(
         <div>
 
                 <div>
-                        <h1>{title}</h1>
+                        <h1>{props.title}</h1>
 
                         <p>
-                            <span>{desc1}</span>
-                            <span>{desc2}</span>
+                            <span>{props.desc1}</span>
+                            <span>{props.desc2}</span>
                         </p>
                         
-                        {formtype === "signup" ? (<Signupform/>) : (<Loginform/>)}
+                        {props.formtype === "signup" ? (<Signupform setIsLoggedIn={props.setIsLoggedIn}/>) : (<Loginform setIsLoggedIn={props.setIsLoggedIn} />)}
 
                         <div>
                             <div></div>
@@ -28,7 +28,7 @@ function Template (title , desc1 , desc2 , image , formtype ,  setIsLoggedIn){
 
                 <div>
                     <img src={frameImg} width={558} height={504} loading="lazy"></img>
-                    <img src={image} width={558} height={490} loading="lazy"></img>
+                    <img src={props.image} width={558} height={490} loading="lazy"></img>
                 </div>
 
         </div>

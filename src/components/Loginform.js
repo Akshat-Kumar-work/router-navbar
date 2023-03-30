@@ -1,8 +1,11 @@
 import { useState } from "react";
 import {AiOutlineEye , AiOutlineEyeInvisible} from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
-function Loginform(){
+function Loginform(props){
+
+    const navigate = useNavigate();
 
     const [showPassword , setShowPassword] = useState(false);
 
@@ -19,10 +22,17 @@ function Loginform(){
         })
     }
 
+    function submitHandler(event){
+        event.preventDefault()
+        props.setIsLoggedIn(true);
+        toast.success("Logged in Succesfully")
+        navigate("/dashboard")
+    }
+
 
     return(
         <div>
-        <form>
+        <form onSubmit={submitHandler}>
 
 
             <label > <p>Email Address <sup>*</sup> </p> 
@@ -34,7 +44,7 @@ function Loginform(){
             <input required type={showPassword ? ("text"):("password")} value={formData.password} onChange={changeHandler} placeholder="Enter Password" name="password"></input>
 
             <span onClick={ ()=>setShowPassword( (prev)=> !prev)}>
-                {showPassword ? (<AiOutlineEyeInvisible></AiOutlineEyeInvisible>) : (<AiOutlineEye></AiOutlineEye>)}
+                {showPassword ? (<AiOutlineEye></AiOutlineEye>) : (<AiOutlineEyeInvisible></AiOutlineEyeInvisible>)}
             </span>
 
 

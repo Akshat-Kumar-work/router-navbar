@@ -6,7 +6,7 @@ function NavBar (props){
 
 
  let isLoggedIn = props.isLoggedIn;
- let setIsLoggedIn = props.setIsLogeedIn;
+ let setIsLoggedIn = props.setIsLoggedIn;
 
 return(
     <div className=" flex  justify-evenly">
