@@ -1,7 +1,7 @@
 function Home (){
 return(
-    <div>
-        
+    <div  className=" flex justify-center items-center">
+        HOME
     </div>
 )
 }

@@ -5,11 +5,15 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import { useState } from "react";
 
 function App() {
+
+  const [isLoggedIn,setIsLogeedIn] = useState(false);
+
   return (
     <div>
-          <NavBar></NavBar>
+          <NavBar isLoggedIn={isLoggedIn} setIsLogeedIn={setIsLogeedIn}></NavBar>
 
           <Routes>
             <Route path="/" element={<Home></Home>}/>
