@@ -1,9 +1,9 @@
 function Contact(){
     return(
         <div>
-            <div className=" flex justify-center items-center">
+            <div className=" flex justify-center items-center w-screen h-screen text-[1.5rem] text-richblack-5">
                
-                Mail Me
+                akshat.kumar.contact@gmail.com
                 
             </div>
         </div>
